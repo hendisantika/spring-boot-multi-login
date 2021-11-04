@@ -12,7 +12,8 @@
     <artifactId>spring-boot-multi-login</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-multi-login</name>
-    <description>spring-boot-multi-login</description>
+    <description>Multi-login pages with Spring Security</description>
+
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -21,7 +22,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
