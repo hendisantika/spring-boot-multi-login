@@ -40,4 +40,27 @@ public class SecurityConfig {
             //@formatter:on
         }
     }
+
+    @Configuration
+    public static class RegularSecurityConfig extends WebSecurityConfigurerAdapter {
+
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            //@formatter:off
+            http
+                    .authorizeRequests()
+                    .antMatchers("/css/**").permitAll()
+                    .anyRequest().authenticated()
+                    .and()
+                    .formLogin()
+                    .loginPage("/regular/login")
+                    .defaultSuccessUrl("/regular/home")
+                    .permitAll()
+                    .and()
+                    .logout()
+                    .logoutUrl("/regular/logout")
+                    .permitAll();
+            //@formatter:on
+        }
+    }
 }
