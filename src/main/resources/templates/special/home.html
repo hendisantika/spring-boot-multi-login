@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Special home page</title>
+</head>
+<body>
+<h1>Welcome to special home page!</h1>
+<form method="post" th:action="@{/special/logout}">
+    <input type="submit" value="Sign Out"/>
+</form>
+</body>
+</html>
