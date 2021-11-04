@@ -26,4 +26,13 @@ class SpringBootMultiLoginApplicationTests {
                 .andExpect(redirectedUrl("http://localhost/regular/login"));
     }
 
+    @Test
+    public void testIfSpecialHomePageIsSecured() throws Exception {
+        final ResultActions resultActions = mockMvc.perform(get("/special/home"));
+        resultActions
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost/special/login"));
+    }
+
+
 }
