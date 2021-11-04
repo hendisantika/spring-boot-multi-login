@@ -45,5 +45,13 @@ class SpringBootMultiLoginApplicationTests {
                 .andExpect(view().name("regular/home"));
     }
 
+    @Test
+    @WithMockUser
+    public void testIfLoggedUserHasAccessToSpecialHomePage() throws Exception {
+        final ResultActions resultActions = mockMvc.perform(get("/special/home"));
+        resultActions
+                .andExpect(status().isOk())
+                .andExpect(view().name("special/home"));
+    }
 
 }
